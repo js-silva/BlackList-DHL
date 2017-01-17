@@ -1,0 +1,44 @@
+<xs:schema
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:tns="http:dhl.com/ws/BlackList"
+		targetNamespace="http:dhl.com/ws/BlackList"
+		elementFormDefault="qualified">
+
+    <xs:element name="STBlackListRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="request" type="tns:STStatusReport"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="STBlackListResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="response" type="tns:STBlackListBeanResponse"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:complexType name="STStatusReport">
+        <xs:sequence>
+            <xs:element name="status" type="tns:STBlackListBean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="STBlackListBean">
+        <xs:sequence>
+            <xs:element name="dateTime" type="xs:string"/>
+            <xs:element name="fcCd" type="xs:string"/>
+            <xs:element name="noPcs" type="xs:integer"/>
+            <xs:element name="pcsIdShipId" type="xs:integer"/>
+            <xs:element name="rCd" type="xs:string" default="ST200"/>
+            <xs:element name="srvaCd" type="xs:string"/>
+            <xs:element name="TyCd" type="xs:string" default="ST"/>
+        </xs:sequence>
+    </xs:complexType>
+	<xs:complexType name="STBlackListBeanResponse">
+        <xs:sequence>
+            <xs:element name="dateTime" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="status" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

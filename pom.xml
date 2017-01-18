@@ -21,7 +21,7 @@
     	<maven.compiler.target>1.8</maven.compiler.target>
 
     	<spring-boot-starter-web--version>1.4.3.RELEASE</spring-boot-starter-web--version>
-    	<spring-boot-starter-ws--version>1.4.3.RELEASE</spring-boot-starter-ws--version>
+    	<spring-boot-starter-web-services--version>1.4.3.RELEASE</spring-boot-starter-web-services--version>
     	<spring-jdbc--version>4.3.5.RELEASE</spring-jdbc--version>
     	<spring-data-jpa--version>1.10.5.RELEASE</spring-data-jpa--version>
 
@@ -48,11 +48,11 @@
 		    <version>${spring-boot-starter-web--version}</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-ws -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web-services -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-ws</artifactId>
-		    <version>${spring-boot-starter-ws--version}</version>
+		    <artifactId>spring-boot-starter-web-services</artifactId>
+		    <version>${spring-boot-starter-web-services--version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->

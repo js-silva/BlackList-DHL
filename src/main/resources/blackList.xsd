@@ -27,8 +27,8 @@
         <xs:sequence>
             <xs:element name="dateTime" type="xs:string"/>
             <xs:element name="fcCd" type="xs:string"/>
-            <xs:element name="noPcs" type="xs:integer"/>
-            <xs:element name="pcsIdShipId" type="xs:integer"/>
+            <xs:element name="noPcs" type="xs:string"/>
+            <xs:element name="pcsIdShipId" type="xs:string"/>
             <xs:element name="rCd" type="xs:string" default="ST200"/>
             <xs:element name="srvaCd" type="xs:string"/>
             <xs:element name="TyCd" type="xs:string" default="ST"/>

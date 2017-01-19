@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-@ComponentScan("blacklist.service")
+@ComponentScan("blacklist")
 public class ServiceConfig {
 
 }

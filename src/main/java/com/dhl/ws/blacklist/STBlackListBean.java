@@ -2,13 +2,12 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2017.01.17 a las 12:57:10 PM CST 
+// Generado el: 2017.01.19 a las 04:38:18 PM CST 
 //
 
 
 package com.dhl.ws.blacklist;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -27,8 +26,8 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="dateTime" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="fcCd" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="noPcs" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *         &lt;element name="pcsIdShipId" type="{http://www.w3.org/2001/XMLSchema}integer"/>
+ *         &lt;element name="noPcs" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="pcsIdShipId" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="rCd" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="srvaCd" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="TyCd" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -57,9 +56,9 @@ public class STBlackListBean {
     @XmlElement(required = true)
     protected String fcCd;
     @XmlElement(required = true)
-    protected BigInteger noPcs;
+    protected String noPcs;
     @XmlElement(required = true)
-    protected BigInteger pcsIdShipId;
+    protected String pcsIdShipId;
     @XmlElement(required = true, defaultValue = "ST200")
     protected String rCd;
     @XmlElement(required = true)
@@ -120,10 +119,10 @@ public class STBlackListBean {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public BigInteger getNoPcs() {
+    public String getNoPcs() {
         return noPcs;
     }
 
@@ -132,10 +131,10 @@ public class STBlackListBean {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public void setNoPcs(BigInteger value) {
+    public void setNoPcs(String value) {
         this.noPcs = value;
     }
 
@@ -144,10 +143,10 @@ public class STBlackListBean {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public BigInteger getPcsIdShipId() {
+    public String getPcsIdShipId() {
         return pcsIdShipId;
     }
 
@@ -156,10 +155,10 @@ public class STBlackListBean {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public void setPcsIdShipId(BigInteger value) {
+    public void setPcsIdShipId(String value) {
         this.pcsIdShipId = value;
     }
 

@@ -22,8 +22,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("blacklist.persist")
-@EnableJpaRepositories("blacklist.persist")
+@ComponentScan("blacklist")
+@EnableJpaRepositories("blacklist")
 @PropertySource(value = { "classpath:application.properties" })
 public class JPAConfig {
 
@@ -45,7 +45,7 @@ public class JPAConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(dataSource());
-        factoryBean.setPackagesToScan("blacklist.persist");
+        factoryBean.setPackagesToScan("blacklist");
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setShowSql(true);
         factoryBean.setJpaVendorAdapter(vendorAdapter);

@@ -321,20 +321,4 @@ public class Validator {
 		validateTyCd();
 	}
 	
-	
-	/*
-	public static void main(String[] args) {
-		System.out.println("ENTRADA AL PROGRAMA");
-		
-		try {
-			new Validator("2017-12-19T23:59:59", "MEX", "1", "1234567890", "ST200", "MEX", "ST");
-			System.out.println("TODOS LOS CAMPOS SON VÁLIDOS");
-			
-		} catch (DhlBlackListValidatorException dhlE) {
-			System.out.println(dhlE.getMessage());
-			
-		}
-	}
-	*/
-	
 }

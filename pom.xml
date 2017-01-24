@@ -24,6 +24,7 @@
     	<spring-boot-starter-web-services--version>1.4.3.RELEASE</spring-boot-starter-web-services--version>
     	<spring-jdbc--version>4.3.5.RELEASE</spring-jdbc--version>
     	<spring-data-jpa--version>1.10.5.RELEASE</spring-data-jpa--version>
+    	<spring-orm--version>4.3.5.RELEASE</spring-orm--version>
 
     	<wsdl4j--version>1.6.3</wsdl4j--version>
 
@@ -67,6 +68,13 @@
 		    <groupId>org.springframework.data</groupId>
 		    <artifactId>spring-data-jpa</artifactId>
 		    <version>${spring-data-jpa--version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-orm</artifactId>
+		    <version>${spring-orm--version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/wsdl4j/wsdl4j -->

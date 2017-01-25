@@ -3,6 +3,9 @@ package blacklist.webservice.validator;
 
 import java.math.BigInteger;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 
 public class Validator {
 	
@@ -14,6 +17,8 @@ public class Validator {
 	private	String	rCd				=	null;
 	private	String	srvaCd			=	null;
 	private	String	tyCd			=	null;
+	
+	private	static final	Logger	logger = LogManager.getLogger(Validator.class);
 	
 	
 	private Validator() {
@@ -67,7 +72,7 @@ public class Validator {
 	private void validateYearFromDate() throws DhlBlackListValidatorException {
 		String tmp01 = this.sDate.trim();
 		String tmp02 = tmp01.substring(0,4);
-		System.out.println("EL AÑO EXTRAIDO ES: "+ tmp02);
+		logger.info("EL AÑO EXTRAIDO ES: "+ tmp02);
 		
 		try {
 			Integer.parseInt(tmp02);
@@ -84,7 +89,7 @@ public class Validator {
 	private void validateMonthFromDate() throws DhlBlackListValidatorException {
 		String tmp01 = this.sDate.trim();
 		String tmp02 = tmp01.substring(5,7);
-		System.out.println("EL MES EXTRAIDO ES: "+ tmp02);
+		logger.info("EL MES EXTRAIDO ES: "+ tmp02);
 		
 		try {
 			Integer.parseInt(tmp02);
@@ -101,7 +106,7 @@ public class Validator {
 	private void validateDayFromDate() throws DhlBlackListValidatorException {
 		String tmp01 = this.sDate.trim();
 		String tmp02 = tmp01.substring(8,10);
-		System.out.println("EL DÍA EXTRAIDO ES: "+ tmp02);
+		logger.info("EL DÍA EXTRAIDO ES: "+ tmp02);
 		
 		try {
 			Integer.parseInt(tmp02);
@@ -118,7 +123,7 @@ public class Validator {
 	private void validateSeparatorFromDate() throws DhlBlackListValidatorException {
 		String tmp01 = this.sDate.trim();
 		String tmp02 = tmp01.substring(10,11);
-		System.out.println("EL SEPARADOR EXTRAIDO ES: "+ tmp02);
+		logger.info("EL SEPARADOR EXTRAIDO ES: "+ tmp02);
 		
 		if( !tmp02.equals("T") ) {
 			throw new DhlBlackListValidatorException("LA FECHA NO ES VÁLIDA, EL FORMATO ES: YYYY-MM-ddTHH:mm:ss");
@@ -128,7 +133,7 @@ public class Validator {
 	private void validateHourFromDate() throws DhlBlackListValidatorException {
 		String tmp01 = this.sDate.trim();
 		String tmp02 = tmp01.substring(11,13);
-		System.out.println("LA HORA EXTRAIDA ES: "+ tmp02);
+		logger.info("LA HORA EXTRAIDA ES: "+ tmp02);
 		
 		try {
 			Integer.parseInt(tmp02);
@@ -145,7 +150,7 @@ public class Validator {
 	private void validateMinutsFromDate() throws DhlBlackListValidatorException {
 		String tmp01 = this.sDate.trim();
 		String tmp02 = tmp01.substring(14,16);
-		System.out.println("EL MINUTO EXTRAIDO ES: "+ tmp02);
+		logger.info("EL MINUTO EXTRAIDO ES: "+ tmp02);
 		
 		try {
 			Integer.parseInt(tmp02);
@@ -162,7 +167,7 @@ public class Validator {
 	private void validateSecondsFromDate() throws DhlBlackListValidatorException {
 		String tmp01 = this.sDate.trim();
 		String tmp02 = tmp01.substring(17,19);
-		System.out.println("EL SEGUNDO EXTRAIDO ES: "+ tmp02);
+		logger.info("EL SEGUNDO EXTRAIDO ES: "+ tmp02);
 		
 		try {
 			Integer.parseInt(tmp02);
@@ -181,7 +186,7 @@ public class Validator {
 		String	tmp02	= tmp01.substring(0,1);
 		String	tmp03	= tmp01.substring(1,2);
 		String	tmp04	= tmp01.substring(2,3);
-		System.out.println("EL CAMPO FcCD EXTRAIDO ES: "+ tmp01);
+		logger.info("EL CAMPO FcCD EXTRAIDO ES: "+ tmp01);
 		
 		if( tmp01.length() != 3 ) {
 			throw new DhlBlackListValidatorException("EL CAMPO FcCD NO ES VÁLIDO, DEBE SER UN CAMPO NO NUMÉRICO, TENER UNA LONGITUD DE 3 CARACTERES, Y MAYÚSCULAS");
@@ -211,7 +216,7 @@ public class Validator {
 	
 	private void validateNPcsId() throws DhlBlackListValidatorException {
 		String	tmp01 = this.nPcsId.trim();
-		System.out.println("EL CAMPO NPcsId EXTRAIDO ES: "+ tmp01);
+		logger.info("EL CAMPO NPcsId EXTRAIDO ES: "+ tmp01);
 		
 		try {
 			BigInteger bInt = new BigInteger(tmp01);
@@ -227,7 +232,7 @@ public class Validator {
 	
 	private void validatePcsIdShipId() throws DhlBlackListValidatorException {
 		String	tmp01 = this.pcsIdShipId.trim();
-		System.out.println("EL CAMPO PcsIdShipId EXTRAIDO ES: "+ tmp01);
+		logger.info("EL CAMPO PcsIdShipId EXTRAIDO ES: "+ tmp01);
 		
 		if( !(tmp01.length() == 10) ) {
 			throw new DhlBlackListValidatorException("EL CAMPO PcsIdShipId NO ES VÁLIDO, DEBE SER UN NUMÉRICO DE 10 POSICIONES, DEBE SER UN VALOR NO NEGATIVO");
@@ -247,7 +252,7 @@ public class Validator {
 	
 	private void validateRCd() throws DhlBlackListValidatorException {
 		String tmp01 = this.rCd.trim();
-		System.out.println("EL CAMPO RCd EXTRAIDO ES: "+ tmp01);
+		logger.info("EL CAMPO RCd EXTRAIDO ES: "+ tmp01);
 		
 		if( !tmp01.equals("ST200") ) {
 			throw new DhlBlackListValidatorException("EL CAMPO RCd NO ES VÁLIDO, DEBE SER EL VALOR \"ST200\"");
@@ -259,7 +264,7 @@ public class Validator {
 		String	tmp02	= tmp01.substring(0,1);
 		String	tmp03	= tmp01.substring(1,2);
 		String	tmp04	= tmp01.substring(2,3);
-		System.out.println("EL CAMPO SrvaCd EXTRAIDO ES: "+ tmp01);
+		logger.info("EL CAMPO SrvaCd EXTRAIDO ES: "+ tmp01);
 		
 		if( tmp01.length() != 3 ) {
 			throw new DhlBlackListValidatorException("EL CAMPO SrvaCd NO ES VÁLIDO, DEBE SER UN CAMPO NO NUMÉRICO, TENER UNA LONGITUD DE 3 CARACTERES, Y MAYÚSCULAS");
@@ -289,7 +294,7 @@ public class Validator {
 	
 	private void validateTyCd() throws DhlBlackListValidatorException {
 		String tmp01 = this.tyCd.trim();
-		System.out.println("EL CAMPO TyCd EXTRAIDO ES: "+ tmp01);
+		logger.info("EL CAMPO TyCd EXTRAIDO ES: "+ tmp01);
 		
 		if( !tmp01.equals("ST") ) {
 			throw new DhlBlackListValidatorException("EL CAMPO TyCd NO ES VÁLIDO, DEBE SER EL VALOR \"ST\"");

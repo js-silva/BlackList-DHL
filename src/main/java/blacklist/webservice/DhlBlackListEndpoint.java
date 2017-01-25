@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -29,6 +31,7 @@ import blacklist.webservice.validator.Validator90Days;
 @Endpoint
 public class DhlBlackListEndpoint {
 	private static final String NAMESPACE_URI = "http:dhl.com/ws/blacklist";
+	private static final Logger logger = LogManager.getLogger(DhlBlackListEndpoint.class);
 	
 	
 	@Autowired
@@ -64,7 +67,7 @@ public class DhlBlackListEndpoint {
 				List<STBlackList>	objs 	= objRepository.findByPcsIdShipId( Long.parseLong(r.getPcsIdShipId()), sort );
 				if( !(objs == null) && !objs.isEmpty() ) {
 					STBlackList obj	= objs.get(0);
-					System.out.println("Datetime for pcsIdShipId=" + r.getPcsIdShipId() + ": " + obj.getDateTime());
+					logger.info("Datetime for pcsIdShipId=" + r.getPcsIdShipId() + ": " + obj.getDateTime());
 					//VALIDACION -- 3 MESES
 					new Validator90Days(obj.getDateTime());
 				}

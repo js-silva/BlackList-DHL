@@ -3,6 +3,9 @@ package blacklist.webservice.validator;
 
 import java.util.Date;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 
 public class Validator90Days {
 	
@@ -12,6 +15,8 @@ public class Validator90Days {
 	
 	private		long		lNow			= 	0L;
 	private		long		lSTDate			=	0L;
+	
+	private static final	Logger	logger	=	LogManager.getLogger(Validator.class);
 	
 	
 	private Validator90Days() {
@@ -27,11 +32,11 @@ public class Validator90Days {
 		this.lSTDate	=	this.stDate.getTime();
 		
 		if( !((lNow - lSTDate) >= 7776000000L) ) {
-			System.out.println("VALIDACIÓN DE 3 MESES KO");
+			logger.info("VALIDACIÓN DE 3 MESES KO");
 			throw new DhlBlackListValidatorException("CARGADO PREVIAMENTE / MENOS DE 3 MESES EN BLACKLIST");
 			
 		} else {
-			System.out.println("VALIDACIÓN DE 3 MESES OK");
+			logger.info("VALIDACIÓN DE 3 MESES OK");
 			
 		}
 	}
